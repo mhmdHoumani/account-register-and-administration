@@ -1,0 +1,82 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register Page";
+}
+
+<br />
+<h1>User Registration</h1>
+<br />
+
+<div class="container border bg-light p-5">
+    <form asp-controller="Account" asp-action="Register" method="post">
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="FirstName"></label>
+            </div>
+            <input asp-for="FirstName" class="form-control col-6" />
+        </div>
+        <span asp-validation-for="FirstName" class="text-danger font-weight-bolder"></span>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="LastName"></label>
+            </div>
+            <input asp-for="LastName" class="form-control col-6" />
+        </div>
+        <span asp-validation-for="LastName" class="text-danger font-weight-bolder"></span>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="Email"></label>
+            </div>
+            <input asp-for="Email" class="form-control col-6" />
+        </div>
+        <span asp-validation-for="Email" class="text-danger font-weight-bolder"></span>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="Username"></label>
+            </div>
+            <input asp-for="Username" class="col-6 form-control" />
+        </div>
+        <span asp-validation-for="Username" class="text-danger font-weight-bolder"></span>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="Password"></label>
+            </div>
+            <input asp-for="Password" class="col-6 form-control" />
+        </div>
+        <span asp-validation-for="Password" class="text-danger font-weight-bolder"></span>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="ConfirmPassword"></label>
+            </div>
+            <input asp-for="ConfirmPassword" class="col-6 form-control" />
+        </div>
+        <span asp-validation-for="ConfirmPassword" class="text-danger font-weight-bolder"></span>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 text-info">
+                <label asp-for="City"></label>
+            </div>
+            <input asp-for="City" class="col-6 form-control" />
+        </div>
+        <hr />
+        <div class="form-group row">
+            <div class="col-3 offset-3">
+                <input type="submit" value="Create" class="btn btn-primary form-control" />
+            </div>
+            <div class="col-3">
+                <a asp-controller="Home" asp-action="index" class="btn btn-danger form-control">Back</a>
+            </div>
+        </div>
+        <div asp-validation-summary="All" class="text-danger font-weight-bolder"></div>
+    </form>
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
